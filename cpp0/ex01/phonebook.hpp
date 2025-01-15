@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:51:46 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/01/06 18:21:23 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/01/15 15:38:25 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,15 @@
 
 class Contact {
 	private :
-		int		index;
+		int		index = 0;
 		char	first_name[50];
 		char	last_name[50];
 		char	nickname[50];
+		char	phone_num[50];
+		char	dark_secret[100];
 	public :
-		void	AddContact()
-		{
-			std::cout << "Enter the index: ";
-			std::cin.clear();
-			std::cin >> index;
-			std::cout << "Enter the first name: ";
-			std::cin.clear();
-			std::cin >> first_name;
-			std::cout << "Enter the last name: ";
-			std::cin.clear();
-			std::cin >> last_name;
-			std::cout << "Enter the nickname: ";
-			std::cin.clear();
-			std::cin >> nickname;
-		}
-		void	ShowContact()
-		{
-			std::cout << index << std::endl;
-			std::cout << first_name << std::endl;
-			std::cout << last_name << std::endl;
-			std::cout << nickname << std::endl;
-		}
+		void	AddContact();
+		void	ShowContact();
 };
 
 class PhoneBook {
