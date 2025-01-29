@@ -5,29 +5,30 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/05 23:33:30 by rzarhoun          #+#    #+#              #
-#    Updated: 2025/01/29 19:40:01 by rzarhoun         ###   ########.fr        #
+#    Created: 2025/01/29 18:38:26 by rzarhoun          #+#    #+#              #
+#    Updated: 2025/01/29 19:35:24 by rzarhoun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
-SRC = megaphone.cpp
-OBJ = $(SRC.cpp:.o)
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CC= c++
+CFLAGS= -Wall -Wextra -Werror -std=c++98
+NAME= account
+SRC= Account.cpp tests.cpp
+HEADER= Account.hpp
+OBJ= $(SRC:.cpp=.o)
 
-all : $(NAME)
+all: $(NAME)
 
-NAME : $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CC) $(CFLAGS) $(OBJ) -I$(HEADER) -o $(NAME)
 
-clean :
+clean:
 	rm -f $(OBJ)
 
-fclean : clean
+fclean: clean
 	rm -f $(NAME)
 
-re : fclean all
+re: fclean all
 
 .SECONDARY: $(OBJ)
 .PHONY: all clean fclean re

@@ -6,9 +6,12 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:51:46 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/01/29 17:45:42 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/01/29 18:01:21 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 #include <iostream>
 #include <limits>
@@ -32,3 +35,5 @@ class PhoneBook {
 		void	ShowContactDetails(int index);
 		int		getContactCount() const {return contact_count; };
 };
+
+#endif

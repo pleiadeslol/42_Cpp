@@ -6,11 +6,12 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 21:27:47 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/01/28 22:02:50 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/01/29 18:00:50 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iostream"
+#ifndef __CONTACT_HPP__
+# define __CONTACT_HPP__
 
 class Contact {
 	private :
@@ -35,3 +36,4 @@ class Contact {
     std::string getDarkestSecret() const { return dark_secret; }
 };
 
+#endif
