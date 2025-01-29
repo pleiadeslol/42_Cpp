@@ -6,27 +6,29 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:51:46 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/01/17 18:14:28 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/01/29 17:45:42 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "iostream"
-#include "limits"
-
-class Contact {
-	private :
-		int		index = 0;
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
-		std::string phone_num;
-		std::string dark_secret;
-};
+#include <iostream>
+#include <limits>
+#include "contact.hpp"
+#include <iomanip>
 
 class PhoneBook {
 	private :
-		Contact	contact[8];
+		Contact	contacts[8];
+		int		contact_count;
+		int		oldest_index;
+		std::string truncateString(const std::string& str) const {
+        if (str.length() > 10)
+            return str.substr(0, 9) + ".";
+        return str;
+    }
 	public :
-		void	AddContact(void);
+		PhoneBook() : contact_count(0), oldest_index(0) {}
+		void	AddContact(Contact &contact);
 		void	ShowContact(void);
+		void	ShowContactDetails(int index);
+		int		getContactCount() const {return contact_count; };
 };
