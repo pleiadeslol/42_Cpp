@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/02 22:22:56 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/02 22:25:52 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/02 22:42:00 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,4 +18,5 @@ int	main()
 	zombie->annouce();
 	delete(zombie);
 	randomChump("Roumaissae");
+	return (0);
 }
