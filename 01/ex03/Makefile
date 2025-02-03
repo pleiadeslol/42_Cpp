@@ -6,21 +6,20 @@
 #    By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/02 22:59:22 by rzarhoun          #+#    #+#              #
-#    Updated: 2025/02/02 23:00:53 by rzarhoun         ###   ########.fr        #
+#    Updated: 2025/02/03 20:29:53 by rzarhoun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC= c++
 CFLAGS= -Wall -Wextra -Werror -std=c++98
-NAME= brain
+NAME= attack
 SRC= HumanA.cpp  HumanB.cpp  main.cpp  Weapon.cpp
-HEADER= HumanA.hpp  HumanB.hpp  Weapon.hpp
 OBJ= $(SRC:.cpp=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -I$(HEADER) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) -I ./ -o $(NAME)
 
 clean:
 	rm -f $(OBJ)
