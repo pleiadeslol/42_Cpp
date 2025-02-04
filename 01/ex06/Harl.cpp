@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 21:19:06 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/03 21:33:38 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/04 15:29:25 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,13 @@ void	Harl::error(void)
 	std::cout << "This is unacceptable! I want to speak to the manager now" << std::endl;
 }
 
-void	Harl::complain(std::string level)
+void	Harl::complain(int level)
 {
-	int	_level = stoi(level);
 	void (Harl::*f[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning,
 		&Harl::error};
-	(this->*f[_level])();
+	if (level != -1) {
+		(this->*f[level])();
+	} else {
+		std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
+	}
 }
