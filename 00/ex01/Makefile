@@ -10,25 +10,25 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
-SRC = Phonebook.cpp Contact.cpp
-OBJ = $(SRC.cpp:.o)
-HEADER= Phonebook.hpp Contact.hpp
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CC= c++
+CFLAGS= -Wall -Wextra -Werror -std=c++98
+NAME= phonebook
+SRC= Phonebook.cpp Contact.cpp 
+HEADERS= -I Phonebook.hpp -I Contact.hpp
+OBJ= $(SRC:.cpp=.o)
 
-all : $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -I$(HEADER) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(HEADERS) -o $(NAME)
 
-clean :
+clean:
 	rm -f $(OBJ)
 
-fclean : clean
+fclean: clean
 	rm -f $(NAME)
 
-re : fclean all
+re: fclean all
 
 .SECONDARY: $(OBJ)
 .PHONY: all clean fclean re
