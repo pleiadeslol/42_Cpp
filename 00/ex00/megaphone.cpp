@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/05 22:25:13 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/01/05 23:40:20 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/07 22:12:40 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ int	main(int ac, char **av)
 	int	i = 1;
 	int	j;
 
+	if (ac == 1)
+	{
+		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
+		return (0);
+	}
 	while (i < ac)
 	{
 		j = 0;
@@ -30,4 +35,5 @@ int	main(int ac, char **av)
 		i++;
 	}
 	std::cout << std::endl;
+	return (0);
 }

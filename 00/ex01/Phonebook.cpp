@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:51:12 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/07 18:41:15 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/07 22:17:32 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ int		PhoneBook::getContactCount()
 	return contact_count;
 }
 
-int main(int ac, char **av)
+int main()
 {
 	PhoneBook phone;
 	std::string option;
@@ -114,7 +114,7 @@ int main(int ac, char **av)
 		if (std::cin.eof())
 		{
 			std::cout << std::endl;
-			std::exit(0);
+			return (0);
 		}
 		if (option == "ADD")
 		{

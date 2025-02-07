@@ -6,12 +6,12 @@
 #    By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/03 21:15:20 by rzarhoun          #+#    #+#              #
-#    Updated: 2025/02/03 21:15:42 by rzarhoun         ###   ########.fr        #
+#    Updated: 2025/02/07 22:16:05 by rzarhoun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC= c++
-CFLAGS= -Wall -Wextra -Werror -std=c++98
+CXX= c++
+CXXFLAGS= -Wall -Wextra -Werror -std=c++98
 NAME= harl
 SRC= main.cpp Harl.cpp
 HEADER= Harl.hpp
@@ -20,7 +20,7 @@ OBJ= $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -I$(HEADER) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -I$(HEADER) -o $(NAME)
 
 clean:
 	rm -f $(OBJ)
