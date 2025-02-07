@@ -1,16 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.cpp                                      :+:      :+:    :+:   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 17:51:12 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/01/29 17:48:36 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/07 18:41:15 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
+
+std::string PhoneBook::truncateString(const std::string& str)
+{
+		if (str.length() > 10)
+			return str.substr(0, 9) + ".";
+		return str;
+}
 
 void	PhoneBook::AddContact(Contact &contact)
 {
@@ -88,6 +95,10 @@ void	PhoneBook::ShowContactDetails(int index)
 	}
 }
 
+int		PhoneBook::getContactCount()
+{
+	return contact_count;
+}
 
 int main(int ac, char **av)
 {

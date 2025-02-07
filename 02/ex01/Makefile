@@ -5,30 +5,30 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/05 23:33:30 by rzarhoun          #+#    #+#              #
-#    Updated: 2025/02/07 18:43:55 by rzarhoun         ###   ########.fr        #
+#    Created: 2025/02/04 15:40:23 by rzarhoun          #+#    #+#              #
+#    Updated: 2025/02/04 15:40:43 by rzarhoun         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
-SRC = Phonebook.cpp Contact.cpp
-OBJ = $(SRC.cpp:.o)
-HEADER= Phonebook.hpp Contact.hpp
-CC = c++
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CC= c++
+CFLAGS= -Wall -Wextra -Werror -std=c++98
+NAME= fixed
+SRC= main.cpp Fixed.cpp
+HEADER= Fixed.hpp
+OBJ= $(SRC:.cpp=.o)
 
-all : $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -I$(HEADER) -o $(NAME)
 
-clean :
+clean:
 	rm -f $(OBJ)
 
-fclean : clean
+fclean: clean
 	rm -f $(NAME)
 
-re : fclean all
+re: fclean all
 
 .SECONDARY: $(OBJ)
 .PHONY: all clean fclean re
