@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/03 21:15:59 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/03 21:34:38 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/08 17:08:04 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define _HARL_H_
 
 #include <iostream>
+#include <sstream>
 
 class Harl {
 	private:
