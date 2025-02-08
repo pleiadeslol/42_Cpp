@@ -6,13 +6,13 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/07 19:14:42 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/07 19:15:27 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/08 15:01:35 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
-int main(int ac, char **av)
+int main()
 {
 	PhoneBook phone;
 	std::string option;
@@ -26,7 +26,7 @@ int main(int ac, char **av)
 		if (std::cin.eof())
 		{
 			std::cout << std::endl;
-			std::exit(0);
+			return (0);
 		}
 		if (option == "ADD")
 		{
