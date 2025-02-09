@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:35:14 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/04 15:58:44 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/08 22:15:10 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define _FIXED_H_
 
 #include <iostream>
+#include <cmath>
 
 class Fixed
 {
@@ -24,9 +25,13 @@ class Fixed
 		Fixed();
 		Fixed(Fixed& value);
 		Fixed& operator=(const Fixed& other);
+		Fixed(const int value);
+		Fixed(const float value);
 		~Fixed();
-		int	getRawBits(void) const;
+		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
+		float	toFloat(void) const;
+		int		toInt(void) const;
 };
 
 
