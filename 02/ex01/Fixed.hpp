@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:35:14 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/08 22:15:10 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:09:02 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ class Fixed
 		static const int N = 8;
 	public:
 		Fixed();
-		Fixed(Fixed& value);
+		Fixed(const Fixed& value);
 		Fixed& operator=(const Fixed& other);
+		friend std::ostream& operator<<(std::ostream& os, const Fixed& fp);
 		Fixed(const int value);
 		Fixed(const float value);
 		~Fixed();

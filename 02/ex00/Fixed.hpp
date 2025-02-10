@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/04 15:35:14 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/04 15:58:44 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/10 17:09:39 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed
 		static const int N = 8;
 	public:
 		Fixed();
-		Fixed(Fixed& value);
+		Fixed(const Fixed& value);
 		Fixed& operator=(const Fixed& other);
 		~Fixed();
 		int	getRawBits(void) const;
