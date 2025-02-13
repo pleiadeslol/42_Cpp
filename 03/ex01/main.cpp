@@ -6,11 +6,10 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 21:03:45 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/13 20:40:13 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/13 21:00:29 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main() {
