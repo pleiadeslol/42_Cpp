@@ -6,23 +6,23 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/11 21:04:04 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/13 20:40:57 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/13 20:41:38 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(std:: string _name) : name(_name), hitPts(10), energyPts(10), attackDmg(0) {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "CrapTrap Default constructor called" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& value) : name(value.name), hitPts(value.hitPts), energyPts(value.energyPts), attackDmg(value.attackDmg) {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "CrapTrap Copy constructor called" << std::endl;
 }
 
 ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "CrapTrap Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
 		this->name = other.name;
@@ -91,5 +91,5 @@ void	ClapTrap::setAttackdmg(unsigned int _attackDmg) {
 }
 
 ClapTrap::~ClapTrap() {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "CrapTrap Destructor called" << std::endl;
 }
