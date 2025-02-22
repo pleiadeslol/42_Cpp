@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 21:44:45 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/22 16:50:22 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/22 17:01:03 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,10 @@ int main() {
 
 	std::cout << "Animal sound: ";
 	meta->makeSound(); // Should print "Animal sound"
+
+	delete meta;
+	delete dog;
+	delete cat;
 
 	// Testing WrongAnimal and WrongCat
 	const WrongAnimal* wrongMeta = new WrongAnimal();

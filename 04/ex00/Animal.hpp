@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 21:44:42 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/13 22:54:56 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/22 17:04:09 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class	Animal {
 		virtual void	makeSound() const;
 		void	setType(std::string _type);
 		std::string	getType(void) const;
-		~Animal();
+		virtual ~Animal();
 };
 
 #endif

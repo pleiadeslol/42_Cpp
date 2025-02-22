@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 00:17:21 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/22 16:42:34 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/22 17:05:31 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,5 @@ std::string	WrongAnimal::getType(void) const {
 }
 
 WrongAnimal::~WrongAnimal() {
-	
+	std::cout << "WrongAnimal destructor called" << std::endl;
 }

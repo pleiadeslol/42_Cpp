@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 16:33:59 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/22 16:49:42 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/22 17:05:00 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,5 @@ void	WrongCat::makeSound() const {
 }
 
 WrongCat::~WrongCat() {
-	
+	std::cout << "WrongCat destructor called" << std::endl;
 }
