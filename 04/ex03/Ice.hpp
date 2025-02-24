@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 17:20:26 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/24 17:25:34 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:19:55 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ class	Ice : public AMateria {
 		const std::string	_type;
 	public :
 		Ice();
-		Ice(std::string const type);
 		Ice(const Ice& value);
 		Ice& operator=(const Ice& other);
-		
+		Ice* clone() const;
+		void use(ICharacter& target);
 		~Ice();
 };
 

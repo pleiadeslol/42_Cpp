@@ -6,14 +6,14 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:13:43 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/23 17:18:42 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/24 18:41:38 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _AMATERIA_H_
 #define _AMATERIA_H_
 
-#include "Character.hpp"
+#include "ICharacter.hpp"
 
 class	AMateria {
 	protected :

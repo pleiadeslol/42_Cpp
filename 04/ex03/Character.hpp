@@ -5,24 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/23 17:18:54 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/23 17:23:06 by rzarhoun         ###   ########.fr       */
+/*   Created: 2025/02/24 18:42:55 by rzarhoun          #+#    #+#             */
+/*   Updated: 2025/02/24 18:51:56 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef _CHARACTER_H_
 #define _CHARACTER_H_
 
-#include <iostream>
-#include "AMateria.hpp"
+#include "ICharacter.hpp"
 
-class	ICharacter {
+class	Character : public ICharacter {
+	private :
+		std::string name;
+		AMateria *materias[4];
 	public :
-		virtual ~ICharacter() {}
-		virtual std::string const & getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
+		Character();
+		Character(std::string &_name);
+		Character(const Character& value);
+		Character& operator=(const Character& other);
+		std::string const & getName() const;
+		void equip(AMateria* m);
+		void unequip(int idx);
+		void use(int idx, ICharacter& target);
+		~Character();
 };
 
 #endif
