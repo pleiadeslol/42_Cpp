@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:13:43 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/24 18:41:38 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:21:32 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define _AMATERIA_H_
 
 #include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
 
 class	AMateria {
 	protected :

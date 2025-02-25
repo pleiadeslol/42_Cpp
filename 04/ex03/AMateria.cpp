@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:13:43 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/24 18:18:44 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:19:03 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ std::string const & AMateria::getType() const {
 }
 
 void AMateria::use(ICharacter& target) {
-	
+	std::cout << "There is no materia to use on " << target.getName() << std::endl;
 }
 
 AMateria::~AMateria() {

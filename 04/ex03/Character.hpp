@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 18:42:55 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/24 18:51:56 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:15:53 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	Character : public ICharacter {
 		AMateria *materias[4];
 	public :
 		Character();
-		Character(std::string &_name);
+		Character(std::string _name);
 		Character(const Character& value);
 		Character& operator=(const Character& other);
 		std::string const & getName() const;

@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:18:54 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/24 18:45:05 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/25 18:20:49 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include "AMateria.hpp"
+
+class AMateria;
 
 class	ICharacter {
 	public :
