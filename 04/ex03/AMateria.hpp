@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:13:43 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/02/25 18:21:32 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/02/26 16:10:45 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 #include "ICharacter.hpp"
 #include "IMateriaSource.hpp"
+
+class	ICharacter;
 
 class	AMateria {
 	protected :
@@ -27,7 +29,7 @@ class	AMateria {
 		std::string const & getType() const;
 		virtual AMateria* clone() const = 0;
 		virtual void use(ICharacter& target);
-		~AMateria();
+		virtual ~AMateria();
 };
 
 #endif
