@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/04 22:27:22 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/03/05 15:28:49 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/03/05 15:30:06 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,16 @@ void	Bureaucrat::decrementGrade() {
 		return ;
 	}
 	setGrade(getGrade() + 1);
+}
+
+void	Bureaucrat::signForm(Form form) {
+	if (form.getSignGrade() >= grade)
+	{
+		form.setSign(true);
+		std::cout << name << " signs " << form.getName() << std::endl;
+	}
+	else
+		std::cout << name << " can't sign " << form.getName() << " because the bureaucrat's grade is lower." << std::endl;
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &i) {
