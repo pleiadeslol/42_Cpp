@@ -6,40 +6,28 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 05:40:01 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/03/10 06:00:31 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/03/10 06:00:18 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AForm.hpp"
-#include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
+#include "Intern.hpp"
 
 int main() {
-	srand(time(0)); // Seed for random number generation
+	Intern intern;
 
-	try {
-		Bureaucrat b1("Alice", 1);
-		Bureaucrat b2("Bob", 150);
+	// Test creating valid forms
+	AForm* form1 = intern.makeForm("shrubbery creation", "home");
+	AForm* form2 = intern.makeForm("robotomy request", "R2D2");
+	AForm* form3 = intern.makeForm("presidential pardon", "Marvin");
 
-		ShrubberyCreationForm f1("home");
-		RobotomyRequestForm f2("R2D2");
-		PresidentialPardonForm f3("Marvin");
+	// Test creating an invalid form
+	AForm* form4 = intern.makeForm("invalid form", "target");
 
-		b2.signForm(f1); // Bob cannot sign
-		b1.signForm(f1); // Alice signs
-		b1.executeForm(f1); // Alice executes
-
-		b1.signForm(f2); // Alice signs
-		b1.executeForm(f2); // Alice executes
-
-		b1.signForm(f3); // Alice signs
-		b1.executeForm(f3); // Alice executes
-
-	} catch (std::exception& e) {
-		std::cerr << "Exception: " << e.what() << std::endl;
-	}
+	// Clean up dynamically allocated forms
+	delete form1;
+	delete form2;
+	delete form3;
+	delete form4; // Should be nullptr, so safe to delete
 
 	return 0;
 }

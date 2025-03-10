@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 05:32:56 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/03/10 06:00:58 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/03/10 05:39:34 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,25 +37,25 @@ ShrubberyCreationForm& ShrubberyCreationForm::operator=(const ShrubberyCreationF
 
 void	ShrubberyCreationForm::Inform() const {
 	std::string filename = target + "_shrubbery";
-	std::ofstream newFile(filename.c_str());
-	if(newFile.is_open())
-	{
-		newFile << "           *" << std::endl;
-		newFile << "          * *" << std::endl;
-		newFile << "         *   *" << std::endl;
-		newFile << "        *     *" << std::endl;
-		newFile << "       *       *" << std::endl;
-		newFile << "      *         *" << std::endl;
-		newFile << "     *           *" << std::endl;
-		newFile << "    *             *" << std::endl;
-		newFile << "   *               *" << std::endl;
-		newFile << "  *                 *" << std::endl;
-		newFile << " *                   *" << std::endl;
-		newFile << "* * * * * * * * * * * *" << std::endl;
-		newFile << "          | |" << std::endl;
-		newFile << "          | |" << std::endl;
-		newFile << "          | |" << std::endl;
-	}
+    std::ofstream newFile(filename.c_str());
+    if(newFile.is_open())
+    {
+        newFile << "           *" << std::endl;
+        newFile << "          * *" << std::endl;
+        newFile << "         *   *" << std::endl;
+        newFile << "        *     *" << std::endl;
+        newFile << "       *       *" << std::endl;
+        newFile << "      *         *" << std::endl;
+        newFile << "     *           *" << std::endl;
+        newFile << "    *             *" << std::endl;
+        newFile << "   *               *" << std::endl;
+        newFile << "  *                 *" << std::endl;
+        newFile << " *                   *" << std::endl;
+        newFile << "* * * * * * * * * * * *" << std::endl;
+        newFile << "          | |" << std::endl;
+        newFile << "          | |" << std::endl;
+        newFile << "          | |" << std::endl;
+    }
 }
 
 void	ShrubberyCreationForm::execute(Bureaucrat const& executor) const {
