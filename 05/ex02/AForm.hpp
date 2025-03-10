@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 22:38:10 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/03/05 22:40:21 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/03/10 05:07:06 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class	AForm {
 		class GradeTooHighException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw()
+				const char* what() const throw()
 				{
 					return ("<AForm> Grade too high !!");
 				}
@@ -46,14 +46,23 @@ class	AForm {
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				virtual const char* what() const throw()
+				const char* what() const throw()
 				{
 					return ("<AForm> Grade too low !!");
 				}
 		};
-		~AForm();
+		class AlreadySignedException : public std::exception
+		{
+			public :
+				const char* what() const throw()
+				{
+					return ("<AForm> is already signed !!");
+				}
+		};
+
+		virtual void execute(Bureaucrat const& executor) const = 0;
+		virtual ~AForm();
 };
 
 std::ostream & operator<<(std::ostream& os, AForm const& form);
-
 #endif

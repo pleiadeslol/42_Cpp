@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 22:32:09 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/03/05 22:32:11 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/03/10 05:14:30 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other) {
 	std::cout << "Bureaucrat assignment operator called" << std::endl;
 	if (this != &other)
 		grade = other.grade;
-	return (*this);u
+	return (*this);
 }
 
 Bureaucrat::~Bureaucrat() {
@@ -83,7 +83,7 @@ void	Bureaucrat::decrementGrade() {
 	setGrade(getGrade() + 1);
 }
 
-void	Bureaucrat::signForm(Form form) {
+void	Bureaucrat::signForm(AForm &form) {
 	if (form.getSignGrade() >= grade)
 	{
 		form.setSign(true);
@@ -91,6 +91,17 @@ void	Bureaucrat::signForm(Form form) {
 	}
 	else
 		std::cout << name << " can't sign " << form.getName() << " because the bureaucrat's grade is lower." << std::endl;
+}
+
+void	Bureaucrat::executeForm(AForm const& form) {
+	try {
+		form.execute(*this);
+		std::cout << getName() << " executed " << form.getName() << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << "Error! " << form.getName() << " not executed because " ;
+		std::cout << e.what() << " ." << std::endl;
+	}
 }
 
 std::ostream &operator<<(std::ostream &os, const Bureaucrat &i) {

@@ -6,7 +6,7 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 22:39:03 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/03/05 22:39:48 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/03/10 05:07:28 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,18 +69,17 @@ int AForm::getExecGrade() const {
 
 void	AForm::beSigned(Bureaucrat& bureaucrat) {
 	try {
+		if (sign)
+			throw AForm::AlreadySignedException();
 		if (getSignGrade() < bureaucrat.getGrade())
-			throw GradeTooLowException();
+			throw Bureaucrat::GradeTooLowException();
 	}
 	catch (const GradeTooLowException & e) {
 		std::cout << e.what() << std::endl;
 		return ;
 	}
-	if (getSignGrade() >= bureaucrat.getGrade())
-	{
-		sign = true;
-		std::cout << getName() << " is signed by " << bureaucrat.getName() << std::endl;
-	}
+	sign = true;
+	std::cout << getName() << " is signed by " << bureaucrat.getName() << std::endl;
 }
 
 std::ostream& operator<<(std::ostream& os, const AForm& form) {
