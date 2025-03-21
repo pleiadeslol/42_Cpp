@@ -58,6 +58,8 @@
         "format": "cpp",
         "span": "cpp",
         "cinttypes": "cpp",
-        "fstream": "cpp"
+        "fstream": "cpp",
+        "csetjmp": "cpp",
+        "list": "cpp"
     }
 }
