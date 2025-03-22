@@ -6,44 +6,75 @@
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/15 02:50:25 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/03/15 02:55:34 by rzarhoun         ###   ########.fr       */
+/*   Updated: 2025/03/22 01:02:55 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PmergeMe.hpp"
 
-void	insertSort(std::vector<int>& arr)
-{
-	for (size_t i = 0; i < arr.size(); i++)
-	{
-		size_t j = i - 1;
-		int current = arr[i];
-		while (j >= 0 && arr[j] > current)
-		{
-			arr[j + 1] = arr[j];
-			j--;
+void	mergeInsertSortVector(std::vector<int>& arr) {
+	if (arr.size() <= 1) return;
+	for (size_t i = 0; i < arr.size() - 1; i += 2) {
+		if (arr[i] > arr[i + 1]) {
+			std::swap(arr[i], arr[i + 1]);
 		}
-		arr[j + 1] = current;
 	}
+	std::vector<int> largerElements;
+	for (size_t i = 1; i < arr.size(); i += 2) {
+		largerElements.push_back(arr[i]);
+	}
+	mergeInsertSortVector(largerElements);
+	std::vector<int> sortedArr;
+	sortedArr.push_back(arr[0]);
+	for (size_t i = 1; i < arr.size(); i += 2) {
+		std::vector<int>::iterator it = std::lower_bound(sortedArr.begin(), sortedArr.end(), arr[i]);
+		sortedArr.insert(it, arr[i]);
+	}
+	for (size_t i = 0; i < arr.size(); i += 2) {
+		std::vector<int>::iterator it = std::lower_bound(sortedArr.begin(), sortedArr.end(), arr[i]);
+		sortedArr.insert(it, arr[i]);
+	}
+	arr = sortedArr;
 }
 
-void	mergeSort(std::vector<int>& arr)
-{
-	std::vector<int> left;
-	std::vector<int> right;
-	size_t i = 0;
-	size_t j = 0;
-	for (; i < arr.size(); i++)
-	{
-		if (i < arr.size() / 2)
-			left[i] = arr[i];
-		else
-		{
-			right[j] = arr[i];
-			j++;
+void	mergeInsertSortDeque(std::deque<int>& arr) {
+	if (arr.size() <= 1) return;
+	for (size_t i = 0; i < arr.size() - 1; i += 2) {
+		if (arr[i] > arr[i + 1]) {
+			std::swap(arr[i], arr[i + 1]);
 		}
 	}
-	mergeSort(left);
-	mergeSort(right);
-	merge(left, right, arr);
+	std::deque<int> largerElements;
+	for (size_t i = 1; i < arr.size(); i += 2) {
+		largerElements.push_back(arr[i]);
+	}
+	mergeInsertSortDeque(largerElements);
+	std::deque<int> sortedArr;
+	sortedArr.push_back(arr[0]);
+	for (size_t i = 1; i < arr.size(); i += 2) {
+		std::deque<int>::iterator it = std::lower_bound(sortedArr.begin(), sortedArr.end(), arr[i]);
+		sortedArr.insert(it, arr[i]);
+	}
+	for (size_t i = 0; i < arr.size(); i += 2) {
+		std::deque<int>::iterator it = std::lower_bound(sortedArr.begin(), sortedArr.end(), arr[i]);
+		sortedArr.insert(it, arr[i]);
+	}
+	arr = sortedArr;
+}
+
+std::vector<int>	parseArguments(int argc, char* argv[]) {
+	std::vector<int> numbers;
+	for (int i = 1; i < argc; ++i) {
+		try {
+			int num = std::atoi(argv[i]);
+			if (num < 0) {
+				throw std::invalid_argument("Negative number");
+			}
+			numbers.push_back(num);
+		} catch (const std::exception& e) {
+			std::cerr << "Error" << std::endl;
+			exit(1);
+		}
+	}
+	return numbers;
 }
