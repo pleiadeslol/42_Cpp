@@ -5,25 +5,26 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rzarhoun <rzarhoun@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/15 01:26:23 by rzarhoun          #+#    #+#             */
-/*   Updated: 2025/03/15 01:32:20 by rzarhoun         ###   ########.fr       */
+/*   Created: 2025/03/15 00:10:00 by rzarhoun          #+#    #+#             */
+/*   Updated: 2025/05/29 13:24:43 by rzarhoun         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "BitcoinExchange.hpp"
 
-int	main(int ac, char **av)
-{
-	if (ac == 2)
-	{
-		std::ifstream infile(av[1]);
-		std::ifstream csvfile("data.csv");
-		std::multimap<std::string, float>csv;
-		if (csvfile.is_open())
-			fill_map(&csvfile, &csv);
-		if (infile.is_open())
-			parse_input(&infile, &csv);
-	}
-	else
-		std::cout << "Error: could not open file." << std::endl;
+int main(int argc, char **argv) {
+    if (argc != 2) {
+        std::cerr << "Error: Could not open file." << std::endl;
+        return 1;
+    }
+    
+    BitcoinExchange exchange;
+    
+    if (!exchange.loadDatabase("data.csv")) {
+        return 1;
+    }
+    
+    exchange.processInputFile(argv[1]);
+    
+    return 0;
 }
